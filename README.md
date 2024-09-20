@@ -8,3 +8,5 @@ Usar el comando
 ```
 npm install
 ```
+npm run dev
+```
