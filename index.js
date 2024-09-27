@@ -1,24 +1,11 @@
-const express = require('express')
-const app = express()
-const port = 3000;
+//Importaciones principales
+require('dotenv').config();
 
-app.get('/', (req, res) => {
-  res.send('Holi!')
-})
+//Importación de archivos
+const Server = require('./models/server');
 
-app.post('/home', (req, res) => {
-    res.send('Bienvenidos a Kinal');
-})
+//Instancia del servidor de arranque
+const servidorIniciado = new Server();
 
-app.put('/editar/1', (req, res) => {
-    res.send('Editando usuario con id 1');
-})
-
-app.delete('/borrar/1', (req, res) => {
-    res.send('Eliminando usuario 1');
-})
-
-
-app.listen(port, () => {
-  console.log(`Escuchando en el puerto ${port}`)
-})
+//Llamar al método listen que levanta el servidor
+servidorIniciado.listen();
